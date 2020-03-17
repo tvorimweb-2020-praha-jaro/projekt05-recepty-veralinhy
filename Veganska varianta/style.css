@@ -1,0 +1,127 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+body {
+    color: white;
+}
+
+.hlavni-recept {
+    background-image: url(images/salat.jpg);
+    min-height: 200px;
+}
+
+.recept2 {
+    background-image: url(images/chlebicek.jpg);
+}
+
+.recept3 {
+    background-image: url(images/tacos.jpg);
+}
+
+.recept4 {
+    background-image: url(images/cizrna.jpg);
+}
+
+.recept5 {
+    background-image: url(images/burger.jpg);
+}
+
+.recept {
+    min-height: 90px;
+}
+
+.hlavni-recept, .recept {
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recept-nazev {
+    margin: 0;
+}
+
+.recept-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 540px) {
+    .hlavni-recept, .recept {
+        padding: 20px;
+    }
+
+    .hlavni-recept {
+        min-height: 250px;
+    }
+    
+    .recepty {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .recept {
+        min-height: 150px;
+        flex: 1 1 50%;
+    }
+    
+    .recept:nth-child(2n+1) {
+        border-right: 1px solid white;
+    }
+}
+
+@media (min-width: 960px) { 
+    .doporucujeme {
+        display: flex;
+    }
+    
+    .hlavni-recept {
+        min-height: 400px;
+        flex-basis: 33.3%;
+        border-right: 1px solid white;
+    }
+
+    .recept {
+        min-height: 200px;
+    }
+    
+}
